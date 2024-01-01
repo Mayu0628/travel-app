@@ -1,12 +1,14 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
 import "./css/Card.css";
+import { useParams } from "react-router-dom";
 import image1 from "../assets/image1.png";
 import image2 from "../assets/image2.png";
 import image3 from "../assets/image3.png";
 import image4 from "../assets/image4.png";
 import image5 from "../assets/image5.png";
 import image6 from "../assets/image6.png";
+import CreatePost from "./CreatePost";
+import { Posts } from "./Posts";
 
 const events = [
   {
@@ -37,38 +39,36 @@ const events = [
   { id: 6, title: "近江町市場 カニまつり", date: "2023年11月11日（土）" },
 ];
 
-const Home = () => {
-  const navigate = useNavigate();
+const Details = () => {
+  const { eventId } = useParams();
+  const event = events.find((e) => e.id.toString() === eventId);
 
-  function handleButtonClick(eventId) {
-    navigate(`/details/${eventId}`);
+  if (!event) {
+    return <div>イベントが見つかりません。</div>;
   }
 
+  const images = {
+    1: image1,
+    2: image2,
+    3: image3,
+    4: image4,
+    5: image5,
+    6: image6,
+  };
+
+  const getImageByEventId = (eventId) => images[eventId] || "";
+
   return (
-    <div className="Card">
-      {events.map((event) => (
-        <div className="event" key={event.id}>
-          <img src={getImageByEventId(event.id)} alt={event.id}></img>
-          <h3>{event.title}</h3>
-          <p>{event.date}</p>
-          <Link to={`/details/${event.id}`}>
-            <button onClick={() => handleButtonClick(event.id)}>口コミ</button>
-          </Link>
-        </div>
-      ))}
-    </div>
+    <>
+      <div className="main">
+        <img src={getImageByEventId(eventId)} alt={event.title} />
+        <h2>{event.title}</h2>
+        <p>{event.date}</p>
+      </div>
+      <CreatePost id={{ eventId }}/>
+      <Posts />
+    </>
   );
 };
 
-const images = {
-  1: image1,
-  2: image2,
-  3: image3,
-  4: image4,
-  5: image5,
-  6: image6,
-};
-
-const getImageByEventId = (eventId) => images[eventId] || "";
-
-export default Home;
+export default Details;
