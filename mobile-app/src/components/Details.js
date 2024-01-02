@@ -65,8 +65,8 @@ const Details = () => {
         <h2>{event.title}</h2>
         <p>{event.date}</p>
       </div>
-      <CreatePost/>
       <Posts />
+      <CreatePost />
     </>
   );
 };
