@@ -1,27 +1,23 @@
 import React, { useState } from "react";
 import { collection, addDoc } from "firebase/firestore";
-import db from "../firebase";
+import { db } from "../firebase";
+import { useParams } from "react-router-dom";
 
-const CreatePost = ({ eventId }) => {
+const CreatePost = () => {
   const [nickname, setNickname] = useState("");
   const [content, setContent] = useState("");
   const [error, setError] = useState(""); // エラーメッセージ用の状態
+  const id = useParams().eventId;
 
   const createPost = async (e) => {
     e.preventDefault();
     setError(""); // エラーメッセージをリセット
 
-    if (!nickname || !content) {
-      setError("ニックネームと内容は必須です。");
-      return;
-    }
-
     try {
       await addDoc(collection(db, "createpost"), {
-        nickname,
-        content,
-        id: eventId,
-        createdAt: new Date(),
+        nickname: nickname,
+        content: content,
+        id: id,
       });
       setNickname("");
       setContent("");
