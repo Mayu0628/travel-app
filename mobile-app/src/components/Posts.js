@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "./css/Post.css";
 import { collection, query, where, getDocs } from "firebase/firestore";
 import { useParams } from "react-router-dom";
 import { db } from "../firebase";
@@ -25,9 +26,9 @@ export const Posts = () => {
   }, [eventId]); // eventIdが変更されたときにのみ効果を再実行
 
   return (
-    <div>
+    <div className="user-reviews">
       {posts.map((post) => (
-        <div key={post.id}>
+        <div key={post.id} className="review-content">
           <h3>{post.nickname}</h3>
           <p>{post.content}</p>
         </div>

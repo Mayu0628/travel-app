@@ -1,5 +1,5 @@
 import React from "react";
-import "./css/Card.css";
+import "./css/Home.css";
 import { useParams } from "react-router-dom";
 import image1 from "../assets/image1.png";
 import image2 from "../assets/image2.png";
@@ -65,8 +65,10 @@ const Details = () => {
         <h2>{event.title}</h2>
         <p>{event.date}</p>
       </div>
-      <Posts />
-      <CreatePost />
+      <div className="review-body">
+        <Posts />
+        <CreatePost />
+      </div>
     </>
   );
 };

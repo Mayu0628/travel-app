@@ -1,0 +1,24 @@
+/* 口コミ表示部分 */
+.user-reviews {
+  width: 70%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.review-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+  margin: 1rem;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #fff;
+}
+
+/* 口コミ投稿部分 */
+.create-review {
+  width: 30%;
+}
+
+

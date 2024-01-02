@@ -28,9 +28,9 @@ const CreatePost = () => {
   };
 
   return (
-    <form onSubmit={createPost}>
+    <form onSubmit={createPost} className="create-review">
       {error && <p className="error">{error}</p>}
-      <div>
+      <div className="nickname">
         <label htmlFor="nickname">ニックネーム</label>
         <input
           type="text"
@@ -39,7 +39,7 @@ const CreatePost = () => {
           onChange={(e) => setNickname(e.target.value)}
         />
       </div>
-      <div>
+      <div className="content">
         <label htmlFor="content">内容</label>
         <textarea
           id="content"
