@@ -1,0 +1,108 @@
+/* 口コミ表示部分 */
+.user-reviews {
+  width: 70%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.review-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+  margin: 1rem;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #fff;
+}
+
+/* 口コミ表示部分の全体のスタイル */
+.user-reviews {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(250px, 1fr)
+  ); /* グリッドのカラムを動的に設定 */
+  grid-gap: 1rem; /* グリッドアイテム間の隙間 */
+  padding: 1rem; /* コンテナのパディング */
+}
+
+/* 個々の口コミのスタイル */
+.review-content {
+  border: 1px solid #ccc; /* 枠線のスタイル */
+  border-radius: 5px; /* 角の丸み */
+  padding: 1rem; /* 内部の余白 */
+  background-color: #fff; /* 背景色 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 影のスタイル */
+}
+
+/* 口コミのタイトル（ニックネーム）のスタイル */
+.review-content h3 {
+  margin-top: 0; /* 上部のマージンを削除 */
+  color: #007bff; /* 文字色 */
+}
+
+/* 口コミの本文のスタイル */
+.review-content p {
+  margin-bottom: 0; /* 下部のマージンを削除 */
+}
+
+/* 口コミ投稿部分 */
+/* 口コミ作成フォーム全体のスタイル */
+.create-review {
+  width: 25%;
+  height: 300px; /* 最小の高さを設定 */
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* エラーメッセージのスタイル */
+.error {
+  color: red;
+  margin-bottom: 10px; /* エラーメッセージと入力フィールド間の余白 */
+}
+
+/* ニックネームと内容のラベルと入力フィールド */
+.create-review .nickname,
+.create-review .content {
+  margin-bottom: 15px; /* 各入力フィールド間の余白 */
+}
+
+.create-review label {
+  display: block; /* ラベルをブロック要素に */
+  margin-bottom: 5px; /* ラベルと入力フィールド間の余白 */
+  font-weight: bold; /* ラベルの文字を太字に */
+}
+
+.create-review input[type="text"],
+.create-review textarea {
+  width: 90%; /* 入力フィールドの幅 */
+  padding: 8px; /* 入力フィールドの内部余白 */
+  border: 1px solid #ddd; /* 枠線のスタイル */
+  border-radius: 4px; /* 枠の角の丸み */
+}
+
+.create-review textarea {
+  height: 100px; /* テキストエリアの高さ */
+  resize: vertical; /* 垂直方向のみサイズ変更可能に */
+}
+
+/* 投稿ボタンのスタイル */
+.create-review button {
+  width: 100%; /* 幅をコンテナに合わせる */
+  padding: 10px 15px; /* ボタンの内部余白 */
+  background-color: #007bff; /* ボタンの背景色 */
+  color: white; /* ボタンの文字色 */
+  border: none; /* 枠線なし */
+  border-radius: 4px; /* 角の丸み */
+  cursor: pointer; /* カーソルをポインターに */
+}
+
+.create-review button:hover {
+  background-color: #0056b3; /* ホバー時の背景色 */
+}
