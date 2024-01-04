@@ -60,10 +60,12 @@ const Details = () => {
 
   return (
     <>
-      <div className="main">
+      <div className="review-title">
         <img src={getImageByEventId(eventId)} alt={event.title} />
-        <h2>{event.title}</h2>
-        <p>{event.date}</p>
+        <div className="review-title-contents">
+          <h2>{event.title}</h2>
+          <p>{event.date}</p>
+        </div>
       </div>
       <div className="review-body">
         <Posts />

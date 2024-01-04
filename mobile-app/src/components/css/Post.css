@@ -6,25 +6,25 @@
 }
 
 .review-content {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 1rem;
-  margin: 1rem;
-  padding: 1rem;
+  background-color: #f8f8f8;
   border: 1px solid #ccc;
   border-radius: 5px;
-  background: #fff;
+  padding: 1rem;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-height: 200px;
+  overflow: scroll;
+}
+
+.review-content p {
+  overflow-y: scroll;
 }
 
 /* 口コミ表示部分の全体のスタイル */
 .user-reviews {
   display: grid;
-  grid-template-columns: repeat(
-    auto-fill,
-    minmax(250px, 1fr)
-  ); /* グリッドのカラムを動的に設定 */
-  grid-gap: 1rem; /* グリッドアイテム間の隙間 */
-  padding: 1rem; /* コンテナのパディング */
+  grid-gap: 1rem;
+  padding: 1rem;
 }
 
 /* 個々の口コミのスタイル */
