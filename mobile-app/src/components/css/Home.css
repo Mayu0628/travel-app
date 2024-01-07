@@ -38,8 +38,29 @@ p {
 
 /* レビュー部分 */
 .review-body {
+  background-color: #fff;
   display: flex;
   justify-content: center;
   padding: 20px;
+  gap: 20px;
+}
+
+.review-title {
+  padding: 50px;
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+}
+
+.review-title img {
+  /* margin: 50px; */
+  width: 40%;
+  height: auto;
+}
+
+.review-title-contents {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   gap: 20px;
 }
